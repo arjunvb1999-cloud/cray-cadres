@@ -155,12 +155,9 @@ p { margin: 0 0 1em; }
 /* ---------- Hero ---------- */
 .hero { padding: 4rem 0 5rem; background: linear-gradient(180deg, var(--cream) 0%, #f3ece0 100%); }
 .hero-inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 3.5rem; align-items: center; }
-.hero-image { border-radius: 220px 220px var(--radius) var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--blush); aspect-ratio: 4 / 5; max-height: 560px; justify-self: center; width: 100%; }
-.hero-image img { width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 860px) {
   .hero { padding: 2.5rem 0 3.5rem; }
   .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .hero-image { order: -1; max-height: 420px; max-width: 420px; }
 }
 
 /* ---------- Section heading ---------- */
@@ -323,9 +320,6 @@ html.is-ready .words--hero .word > span { transform: none; }
   transition-delay: calc(var(--d, 0) * 120ms + 500ms);
 }
 html.is-ready .hero-fade { opacity: 1; transform: none; }
-.hero-image { clip-path: inset(100% 0 0 0); transition: clip-path 1.3s cubic-bezier(0.7, 0, 0.2, 1) 0.2s; }
-html.is-ready .hero-image { clip-path: inset(0 0 0 0); }
-.hero-image img { transform: scale(1.1); will-change: transform; }
 
 /* Ticker */
 .marquee { overflow: hidden; border-block: 1px solid rgba(74, 59, 50, 0.1); background: var(--white); padding: 1.1rem 0; }
@@ -372,8 +366,6 @@ html.is-ready .hero-image { clip-path: inset(0 0 0 0); }
 @media (prefers-reduced-motion: reduce) {
   .word > span, html.is-ready .words--hero .word > span { transform: none !important; }
   .hero-fade, .section-heading .fade-item { opacity: 1 !important; transform: none !important; }
-  .hero-image { clip-path: none !important; }
-  .hero-image img { transform: none !important; }
   .marquee-track { animation: none !important; }
   .marquee { overflow-x: auto; }
   .intro { display: none; }
@@ -382,7 +374,7 @@ html.is-ready .hero-image { clip-path: inset(0 0 0 0); }
 }
 
 /* ============================================================
-   BLOOM - the looping flower badge on the hero photo
+   BLOOM - the looping flower inside the hero artwork
    One loop = 8 seconds. Change "8s" below to speed it up or slow it down.
    The resting (un-animated) style is the fully bloomed flower.
    ============================================================ */
@@ -390,15 +382,6 @@ html.is-ready .hero-image { clip-path: inset(0 0 0 0); }
 .hero-visual { position: relative; width: 100%; justify-self: center; }
 @media (max-width: 860px) { .hero-visual { order: -1; max-width: 420px; } }
 
-.hero-bloom {
-  position: absolute; left: -6%; bottom: -5%;
-  width: clamp(112px, 26%, 170px); aspect-ratio: 1;
-  pointer-events: none;
-  filter: drop-shadow(0 8px 14px rgba(74, 59, 50, 0.18));
-  opacity: 0; transform: translateY(14px) scale(0.85);
-  transition: opacity 1s ease 1.4s, transform 1s cubic-bezier(0.2, 0.7, 0.2, 1) 1.4s;
-}
-html.is-ready .hero-bloom { opacity: 1; transform: none; }
 .bloom { display: block; width: 100%; height: 100%; }
 
 @keyframes bloomFade { 0% { opacity: 0; } 5%, 90% { opacity: 1; } 100% { opacity: 0; } }
@@ -425,7 +408,6 @@ html.is-ready .hero-bloom { opacity: 1; transform: none; }
 
 /* Reduce motion: show the flower fully bloomed and still */
 @media (prefers-reduced-motion: reduce) {
-  .hero-bloom { opacity: 1 !important; transform: none !important; }
   .bloom-all, .bloom-stem, .bloom-leaf, .bloom-head, .bloom-petal, .bloom-dot { animation: none !important; }
 }
 
