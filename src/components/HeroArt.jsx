@@ -1,7 +1,8 @@
 import { siteConfig } from "../data/siteConfig.js";
-import BloomingFlower from "./BloomingFlower.jsx";
+import EmbroideryHoop from "./EmbroideryHoop.jsx";
 
-// The hero artwork: a blooming flower inside a ring of text that travels around a circular path.
+// The hero artwork: an embroidery hoop where a needle stitches a heart sprig
+// onto the fabric, over and over, inside a ring of travelling text.
 // Decorative only (the heading already says the same thing), so it is hidden from screen readers.
 // Edit the ring text in src/data/siteConfig.js -> hero.ringText
 export default function HeroArt() {
@@ -26,8 +27,8 @@ export default function HeroArt() {
         </text>
       </svg>
 
-      <div className="hero-art-flower">
-        <BloomingFlower />
+      <div className="hero-art-hoop">
+        <EmbroideryHoop />
       </div>
     </div>
   );
