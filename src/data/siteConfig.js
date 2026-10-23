@@ -15,15 +15,15 @@ export const siteConfig = {
   instagramHandle: "@_.cray_cadres._",
 
   hero: {
-    heading: "Little Things. Thoughtfully Made.",
+    heading: "Little Things, Made with Love.",
     description:
-      "Discover handmade flowers, tiny clay creations, and thoughtful gifts made to bring a little more joy to someone's day.",
+      "Thoughtfully crafted gifts and creative treasures that make every moment special.",
     // Text that travels around the blooming flower in the hero.
     ringText: "Handmade with love · Little things, thoughtfully made · ",
-    primaryButton: "Explore Our Collection",
-    secondaryButton: "Create a Custom Gift",
+    primaryButton: "Explore Our Creations",
+    secondaryButton: "Find Your Perfect Gift",
     customGiftMessage:
-      "Hi Cray Cadres! I'd like to ask about a custom handmade gift.",
+      "Hi Cray Cadres! I'd like to ask about finding the perfect handmade gift.",
   },
 
   custom: {

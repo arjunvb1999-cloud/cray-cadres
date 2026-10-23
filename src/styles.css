@@ -152,15 +152,15 @@ p { margin: 0 0 1em; }
   .nav-actions { justify-content: space-between; }
 }
 
-/* ---------- Hero: The Paper Atelier ---------- */
+/* ---------- Hero: The Sunlit Craft Atelier ---------- */
 .hero {
   position: relative;
-  padding: 4.5rem 0 5.5rem;
-  background: #fbf7ee;
+  padding: 5rem 0 5.5rem;
+  background: #FFF8EF;
   overflow: hidden;
 }
-.hero--papercraft {
-  background: #fcf9f2;
+.hero--cinematic {
+  background: #FFF8EF;
 }
 .hero-inner {
   position: relative;
@@ -170,8 +170,8 @@ p { margin: 0 0 1em; }
   gap: 3.5rem;
   align-items: center;
 }
-@media (max-width: 900px) {
-  .hero { padding: 3rem 0 4rem; }
+@media (max-width: 960px) {
+  .hero { padding: 3.2rem 0 4.2rem; }
   .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
@@ -389,606 +389,635 @@ html.is-ready .hero-fade { opacity: 1; transform: none; }
 }
 
 /* ============================================================
-   THE PAPER ATELIER - FOLDED PAPER BACKGROUND & CRAFT CUTOUT SCENE
+   CINEMATIC CRAFT STORYBOARD & EDITORIAL HERO STYLES
    ============================================================ */
 
-/* Folded Paper Background Facets & Creases */
-.folded-paper-bg {
+/* Warm Ambient Sunlight Backdrop */
+.sunlight-backdrop {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
 }
-
-.paper-quadrant {
+.ambient-sun-glow {
   position: absolute;
-  width: 50%;
-  height: 50%;
+  top: -20%;
+  left: -10%;
+  width: 60%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 238, 187, 0.55) 0%, rgba(255, 248, 239, 0) 70%);
+  filter: blur(40px);
 }
-.paper-quadrant--nw {
-  top: 0; left: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(250, 247, 240, 0.1) 100%);
-}
-.paper-quadrant--ne {
-  top: 0; right: 0;
-  background: linear-gradient(225deg, rgba(254, 243, 224, 0.65) 0%, rgba(245, 237, 224, 0.15) 100%);
-}
-.paper-quadrant--sw {
-  bottom: 0; left: 0;
-  background: linear-gradient(45deg, rgba(242, 234, 219, 0.5) 0%, rgba(255, 255, 255, 0.15) 100%);
-}
-.paper-quadrant--se {
-  bottom: 0; right: 0;
-  background: linear-gradient(315deg, rgba(235, 224, 206, 0.55) 0%, rgba(255, 250, 240, 0.15) 100%);
-}
-
-/* Paper Crease Highlights & Shadows */
-.paper-crease {
+.table-perspective-base {
   position: absolute;
-  pointer-events: none;
-}
-.paper-crease--h {
-  top: 50%; left: 0; right: 0; height: 1.5px;
-  background: linear-gradient(90deg, transparent 0%, rgba(74, 59, 50, 0.1) 12%, rgba(255, 255, 255, 0.95) 50%, rgba(74, 59, 50, 0.1) 88%, transparent 100%);
-  box-shadow: 0 1px 3px rgba(74, 59, 50, 0.05);
-}
-.paper-crease--v {
-  left: 50%; top: 0; bottom: 0; width: 1.5px;
-  background: linear-gradient(180deg, transparent 0%, rgba(74, 59, 50, 0.1) 12%, rgba(255, 255, 255, 0.95) 50%, rgba(74, 59, 50, 0.1) 88%, transparent 100%);
-  box-shadow: 1px 0 3px rgba(74, 59, 50, 0.05);
-}
-.paper-crease--diag {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  border-top: 1px dashed rgba(74, 59, 50, 0.07);
-  transform: rotate(26deg);
-  opacity: 0.8;
-}
-
-/* Studio Cutting Mat Grid */
-.cutting-mat-grid {
-  position: absolute;
-  inset: 0;
-  background-size: 40px 40px;
-  background-image:
-    linear-gradient(to right, rgba(74, 59, 50, 0.038) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(74, 59, 50, 0.038) 1px, transparent 1px);
-}
-
-/* Floating Paper Confetti in Hero Background */
-.paper-float {
-  position: absolute;
-  font-size: 1.4rem;
-  opacity: 0.35;
-  user-select: none;
-  animation: floatDrift 9s ease-in-out infinite alternate;
-}
-.paper-float--1 { top: 10%; left: 6%; animation-duration: 8s; animation-delay: 0s; color: var(--brown); font-size: 1.2rem; }
-.paper-float--2 { top: 20%; right: 7%; animation-duration: 11s; animation-delay: 1.5s; font-size: 1.8rem; }
-.paper-float--3 { bottom: 18%; left: 12%; animation-duration: 9.5s; animation-delay: 0.8s; color: #E69500; }
-.paper-float--4 { bottom: 22%; right: 10%; animation-duration: 10s; animation-delay: 2.2s; color: #6F7F58; }
-.paper-float--5 { top: 72%; left: 46%; animation-duration: 12s; animation-delay: 3s; font-size: 1.1rem; color: #E8CFCB; }
-
-@keyframes floatDrift {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-16px) rotate(14deg); }
-  100% { transform: translateY(8px) rotate(-10deg); }
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 38%;
+  background: linear-gradient(180deg, rgba(200, 160, 122, 0) 0%, rgba(182, 139, 100, 0.08) 100%);
 }
 
 /* ------------------------------------------------------------
-   HERO TYPOGRAPHY & CRAFT ATELIER BADGES
+   HERO TYPOGRAPHY & STORY ELEMENTS
    ------------------------------------------------------------ */
-.hero-craft-pill {
+.hero-story-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.42rem 1.15rem;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(163, 177, 138, 0.55);
+  gap: 0.5rem;
+  padding: 0.45rem 1.15rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(168, 121, 84, 0.22);
   border-radius: 999px;
-  box-shadow: 0 4px 14px rgba(74, 59, 50, 0.07);
-  backdrop-filter: blur(6px);
-  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 14px rgba(60, 51, 43, 0.06);
+  backdrop-filter: blur(8px);
+  margin-bottom: 1.3rem;
 }
-.pill-scissors {
+.eyebrow-accent {
+  color: #E8A15A;
   display: inline-flex;
-  color: #795548;
-  animation: scissorSnipMicro 2.2s ease-in-out infinite;
+  animation: accentPulse 2.5s ease-in-out infinite;
 }
-@keyframes scissorSnipMicro {
-  0%, 100% { transform: rotate(0deg); }
-  20%, 40% { transform: rotate(-16deg); }
-  30%, 50% { transform: rotate(8deg); }
+@keyframes accentPulse {
+  0%, 100% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.2) rotate(15deg); opacity: 1; }
 }
-.pill-text {
-  font-size: 0.8rem;
+.eyebrow-brand {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--sage-dark);
+  letter-spacing: 0.1em;
+  color: #3C332B;
 }
-.pill-sparkle {
-  color: #E69500;
-  font-size: 0.85rem;
-  animation: sparkleTwinkle 2s ease-in-out infinite;
+.eyebrow-separator {
+  color: #A87954;
+  opacity: 0.6;
 }
-@keyframes sparkleTwinkle {
-  0%, 100% { transform: scale(0.9); opacity: 0.7; }
-  50% { transform: scale(1.3) rotate(35deg); opacity: 1; }
+.eyebrow-tagline {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #879875;
 }
 
 .hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5.2vw, 4rem);
+  color: #3C332B;
   margin-bottom: 1.2rem;
-  line-height: 1.15;
+  line-height: 1.14;
+  letter-spacing: -0.01em;
 }
-.highlight-crease {
+.headline-highlight {
   position: relative;
   display: inline-block;
-  color: var(--brown);
-}
-.crease-underline {
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 14px;
-  overflow: visible;
-  pointer-events: none;
-}
-.crease-underline path {
-  stroke-dasharray: 320;
-  stroke-dashoffset: 320;
-  animation: drawUnderline 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.6s forwards;
-}
-@keyframes drawUnderline {
-  to { stroke-dashoffset: 0; }
+  color: #A87954;
+  font-style: italic;
+  font-weight: 500;
 }
 
-/* Sunny Golden Craft Buttons */
-.btn-craft-sun {
-  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-  color: var(--white);
-  border-color: #D97706;
-  box-shadow: 0 8px 22px -4px rgba(245, 158, 11, 0.45);
-}
-.btn-craft-sun:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px -4px rgba(245, 158, 11, 0.6);
-}
-.btn-craft-outline {
-  border-color: rgba(74, 59, 50, 0.35);
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(4px);
-}
-.btn-craft-outline:hover {
-  background: var(--brown);
-  color: var(--white);
-  border-color: var(--brown);
+.hero-text .lead {
+  font-size: 1.14rem;
+  color: #5D5046;
+  max-width: 540px;
+  line-height: 1.68;
+  margin-bottom: 2rem;
 }
 
-/* Handcrafted Paper Studio Trust Tags */
-.hero-craft-tags {
+/* Sunshine Inspired Action Buttons */
+.btn-sunshine {
+  background: linear-gradient(135deg, #F4C542 0%, #E8A15A 100%);
+  color: #2E1F0E;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 8px 24px -4px rgba(244, 197, 66, 0.45);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.btn-sunshine:hover {
+  transform: translateY(-2.5px);
+  box-shadow: 0 12px 30px -4px rgba(244, 197, 66, 0.62);
+  color: #2E1F0E;
+}
+.btn-sunshine-outline {
+  border-color: rgba(168, 121, 84, 0.55);
+  background: rgba(255, 255, 255, 0.85);
+  color: #3C332B;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+.btn-sunshine-outline:hover {
+  background: #3C332B;
+  color: #FFF8EF;
+  border-color: #3C332B;
+}
+
+/* Editorial Features Strip */
+.hero-editorial-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.9rem;
-  margin-top: 2.2rem;
-  padding-top: 1.5rem;
-  border-top: 1px dashed rgba(74, 59, 50, 0.18);
+  gap: 1.2rem;
+  margin-top: 2.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(168, 121, 84, 0.18);
 }
-.craft-tag {
+.editorial-feature-item {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.55rem 0.95rem;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(74, 59, 50, 0.12);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(74, 59, 50, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-.craft-tag:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(74, 59, 50, 0.1);
-  border-color: #E69500;
+.feature-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #E8A15A;
+  box-shadow: 0 0 8px rgba(232, 161, 90, 0.8);
+  flex-shrink: 0;
 }
-.tag-emoji {
-  font-size: 1.25rem;
-}
-.tag-meta {
+.feature-text {
   display: flex;
   flex-direction: column;
 }
-.tag-meta strong {
-  font-size: 0.82rem;
-  color: var(--brown);
-  line-height: 1.2;
+.feature-text strong {
+  font-size: 0.85rem;
+  color: #3C332B;
+  line-height: 1.25;
 }
-.tag-meta small {
-  font-size: 0.72rem;
-  color: var(--grey);
+.feature-text small {
+  font-size: 0.74rem;
+  color: #7A6B5F;
 }
 
 /* ------------------------------------------------------------
-   PAPERCRAFT SHADOWBOX & ANIMATIONS
+   THE CINEMATIC CRAFT SCENE CONTAINER
    ------------------------------------------------------------ */
-.hero-visual--paper {
+.hero-visual--cinematic {
   position: relative;
   width: 100%;
   justify-self: center;
   z-index: 2;
 }
-@media (max-width: 900px) {
-  .hero-visual--paper {
+@media (max-width: 960px) {
+  .hero-visual--cinematic {
     order: -1;
-    max-width: 440px;
+    max-width: 540px;
   }
 }
 
-.papercraft-shadowbox {
+.cinematic-craft-container {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 580px;
   margin-inline: auto;
-  aspect-ratio: 1;
-  filter: drop-shadow(0 18px 36px rgba(74, 59, 50, 0.16));
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.papercraft-shadowbox:hover {
-  transform: translateY(-3px) scale(1.012);
-}
-.papercraft-svg {
-  display: block;
-  width: 100%;
-  height: 100%;
+  border-radius: 20px;
   overflow: visible;
 }
 
-/* Washi Tape Strips */
-.washi-tape {
-  position: absolute;
-  width: 96px;
-  height: 28px;
-  z-index: 10;
-  pointer-events: none;
-  filter: drop-shadow(0 2px 4px rgba(74, 59, 50, 0.18));
-}
-.washi-tape svg {
-  width: 100%;
-  height: 100%;
+.cinematic-craft-svg {
   display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 24px 48px -8px rgba(60, 51, 43, 0.22), 0 4px 16px rgba(60, 51, 43, 0.08);
+  transition: transform 0.4s ease;
 }
-.washi-tape--tl {
-  top: 8px;
-  left: 24px;
-  transform: rotate(-12deg);
-}
-.washi-tape--tr {
-  top: 8px;
-  right: 24px;
-  transform: rotate(10deg);
+.cinematic-craft-container:hover .cinematic-craft-svg {
+  transform: translateY(-3px);
 }
 
 /* ------------------------------------------------------------
-   CUTOUT ANIMATIONS: SCISSORS & OUTLINE TRACING
+   STORYBOARD SCENE 1: SUNSHINE BEAM & DUST MOTES
    ------------------------------------------------------------ */
-.scissor-cut-path {
-  stroke-dasharray: 450;
-  stroke-dashoffset: 450;
-  animation: revealCutLine 8s ease-in-out infinite;
+.sunlight-beam {
+  animation: sunlightFadeIn 2.5s ease-out forwards;
 }
-@keyframes revealCutLine {
-  0% { stroke-dashoffset: 450; opacity: 0; }
-  8% { opacity: 0.85; }
-  62%, 84% { stroke-dashoffset: 0; opacity: 0.85; }
-  92%, 100% { stroke-dashoffset: 450; opacity: 0; }
+@keyframes sunlightFadeIn {
+  from { opacity: 0.2; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-.craft-scissors {
-  animation: moveScissors 8s ease-in-out infinite;
+.dust-mote {
+  animation: dustFloat ease-in-out infinite alternate;
 }
-@keyframes moveScissors {
+@keyframes dustFloat {
+  0% { transform: translate(0, 0); opacity: 0.25; }
+  50% { transform: translate(8px, -14px); opacity: 0.85; }
+  100% { transform: translate(-6px, 10px); opacity: 0.35; }
+}
+
+/* ------------------------------------------------------------
+   STORYBOARD SCENE 2 & 3: THE GLASS CUP & SUNFLOWER FALL
+   Timeline (0s - 3.2s):
+     0s - 0.7s: Hidden above scene
+     0.8s - 2.2s: Enters and falls with gravity momentum & natural tilt
+     2.2s: Gentle contact with wooden table surface
+     2.2s - 2.6s: Smooth bounce/roll settling without glass breaking
+     2.6s - 3.2s: Settles securely into resting position
+     3.2s+: Gentle idle sunflower breeze sway
+   ------------------------------------------------------------ */
+.falling-glass-group {
+  transform-origin: 265px 365px;
+  animation: cupFallAndSettle 3.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes cupFallAndSettle {
   0% {
-    transform: translate(75px, 190px) rotate(-15deg);
+    transform: translate(30px, -220px) rotate(-26deg);
     opacity: 0;
   }
-  8% {
+  15% {
     opacity: 1;
-    transform: translate(85px, 185px) rotate(-10deg);
-  }
-  24% {
-    transform: translate(170px, 170px) rotate(12deg);
-  }
-  42% {
-    transform: translate(240px, 160px) rotate(-16deg);
-  }
-  60% {
-    transform: translate(310px, 150px) rotate(14deg);
-  }
-  75% {
-    transform: translate(405px, 130px) rotate(-6deg);
-    opacity: 1;
-  }
-  84%, 100% {
-    transform: translate(425px, 120px) rotate(5deg);
-    opacity: 0;
-  }
-}
-
-/* ------------------------------------------------------------
-   FOLDED SUN & ORIGAMI RAYS
-   ------------------------------------------------------------ */
-.paper-sun {
-  transform-origin: 240px 125px;
-  animation: paperSunRise 8s cubic-bezier(0.34, 1.4, 0.64, 1) infinite;
-}
-@keyframes paperSunRise {
-  0%, 8% {
-    transform: translateY(140px) scale(0.65);
-    opacity: 0.2;
-  }
-  25%, 82% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  92%, 100% {
-    transform: translateY(140px) scale(0.65);
-    opacity: 0.2;
-  }
-}
-
-.paper-sun-rays {
-  animation: sunRaySpin 24s linear infinite;
-}
-@keyframes sunRaySpin {
-  to { transform: rotate(360deg); }
-}
-
-.sun-pulse-glow {
-  animation: sunPulse 3.5s ease-in-out infinite alternate;
-  transform-origin: 240px 125px;
-}
-@keyframes sunPulse {
-  from { transform: scale(0.9); opacity: 0.35; }
-  to { transform: scale(1.1); opacity: 0.65; }
-}
-
-/* ------------------------------------------------------------
-   PAPER STEM & ORIGAMI LEAVES
-   ------------------------------------------------------------ */
-.paper-stem {
-  transform-origin: 240px 405px;
-  animation: paperStemSprout 8s cubic-bezier(0.34, 1.45, 0.64, 1) infinite;
-}
-@keyframes paperStemSprout {
-  0%, 12% { transform: scaleY(0); opacity: 0; }
-  24%, 84% { transform: scaleY(1); opacity: 1; }
-  92%, 100% { transform: scaleY(0); opacity: 0; }
-}
-
-.paper-leaf--left {
-  transform-origin: 238px 338px;
-  animation: paperLeafLeft 8s cubic-bezier(0.34, 1.5, 0.64, 1) infinite;
-}
-@keyframes paperLeafLeft {
-  0%, 18% { transform: scale(0) rotate(-24deg); opacity: 0; }
-  28% { transform: scale(1.15) rotate(4deg); opacity: 1; }
-  34%, 84% { transform: scale(1) rotate(0deg); opacity: 1; }
-  92%, 100% { transform: scale(0) rotate(-24deg); opacity: 0; }
-}
-
-.paper-leaf--right {
-  transform-origin: 240px 305px;
-  animation: paperLeafRight 8s cubic-bezier(0.34, 1.5, 0.64, 1) infinite;
-}
-@keyframes paperLeafRight {
-  0%, 20% { transform: scale(0) rotate(24deg); opacity: 0; }
-  30% { transform: scale(1.15) rotate(-4deg); opacity: 1; }
-  36%, 84% { transform: scale(1) rotate(0deg); opacity: 1; }
-  92%, 100% { transform: scale(0) rotate(24deg); opacity: 0; }
-}
-
-/* ------------------------------------------------------------
-   FACETED 32-PETAL SUNFLOWER BLOOM
-   ------------------------------------------------------------ */
-.paper-flower-head {
-  transform-origin: 240px 245px;
-  animation: paperBloom 8s cubic-bezier(0.34, 1.45, 0.64, 1) infinite;
-}
-@keyframes paperBloom {
-  0%, 22% {
-    transform: scale(0) rotate(-18deg);
-    opacity: 0;
-  }
-  34% {
-    transform: scale(1.16) rotate(6deg);
-    opacity: 1;
-  }
-  42% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
+    transform: translate(25px, -180px) rotate(-24deg);
   }
   55% {
-    transform: scale(1.02) rotate(-3.5deg);
+    transform: translate(12px, -35px) rotate(-10deg);
+  }
+  70% {
+    /* Gentle Table Contact */
+    transform: translate(0px, 0px) rotate(26deg);
+  }
+  80% {
+    /* Rebound / Roll */
+    transform: translate(-4px, -6px) rotate(14deg);
+  }
+  92% {
+    transform: translate(-1px, -1px) rotate(20deg);
+  }
+  100% {
+    /* Final Rest */
+    transform: translate(0px, 0px) rotate(18deg);
     opacity: 1;
+  }
+}
+
+/* Dynamic Table Contact Shadow */
+.cup-contact-shadow {
+  transform-origin: 285px 375px;
+  animation: shadowContact 3.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+@keyframes shadowContact {
+  0%, 20% {
+    opacity: 0;
+    transform: scale(2.2);
   }
   68% {
-    transform: scale(0.99) rotate(3deg);
-    opacity: 1;
+    opacity: 0.2;
+    transform: scale(1.3);
   }
-  84% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
+  70% {
+    opacity: 0.45;
+    transform: scale(1);
   }
-  92%, 100% {
-    transform: scale(0) rotate(18deg);
+  80% {
+    opacity: 0.32;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 0.38;
+    transform: scale(1);
+  }
+}
+
+/* Sunflower Follow-Through Momentum & Idle Sway */
+.sunflower-head {
+  animation: flowerMomentumLag 3.2s ease-out forwards, sunflowerIdleBreeze 5.5s ease-in-out infinite alternate 3.2s;
+}
+
+@keyframes flowerMomentumLag {
+  0%, 40% { transform: rotate(-14deg); }
+  68% { transform: rotate(-18deg); }
+  72% { transform: rotate(10deg); }
+  82% { transform: rotate(-5deg); }
+  92% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes sunflowerIdleBreeze {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(-2deg) scale(1.01); }
+  100% { transform: rotate(1.8deg) scale(0.99); }
+}
+
+.sunflower-leaf.leaf-left {
+  transform-origin: 258px 260px;
+  animation: leafSwayLeft 5s ease-in-out infinite alternate 3.2s;
+}
+@keyframes leafSwayLeft {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-4deg); }
+}
+
+.sunflower-leaf.leaf-right {
+  transform-origin: 255px 220px;
+  animation: leafSwayRight 5s ease-in-out infinite alternate 3.2s;
+}
+@keyframes leafSwayRight {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(4deg); }
+}
+
+/* ------------------------------------------------------------
+   STORYBOARD SCENE 4: SPREADING CRAFT SUPPLIES
+   Triggered as the cup makes contact at 2.2s (70% mark of 3.2s)
+   ------------------------------------------------------------ */
+
+/* 1. Paintbrush 1 (Cobalt Blue Tip - Slides to Upper Right) */
+.supply-brush-1 {
+  transform-origin: 470px 60px;
+  animation: brush1Spread 1.6s cubic-bezier(0.22, 1, 0.36, 1) 2.2s both;
+}
+@keyframes brush1Spread {
+  0% {
+    transform: translate(-100px, 90px) rotate(-65deg);
     opacity: 0;
   }
+  20% { opacity: 1; }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
 }
 
-.paper-petals-outer {
-  transform-origin: 240px 245px;
-  animation: petalsUnfoldOuter 8s cubic-bezier(0.34, 1.5, 0.64, 1) infinite;
+/* 2. Paintbrush 2 (Ochre Gold Tip - Slides to Upper Left) */
+.supply-brush-2 {
+  transform-origin: 90px 200px;
+  animation: brush2Spread 1.6s cubic-bezier(0.22, 1, 0.36, 1) 2.25s both;
 }
-@keyframes petalsUnfoldOuter {
-  0%, 24% { transform: scale(0); opacity: 0; }
-  34% { transform: scale(1.12); opacity: 1; }
-  40%, 84% { transform: scale(1); opacity: 1; }
-  92%, 100% { transform: scale(0); opacity: 0; }
+@keyframes brush2Spread {
+  0% {
+    transform: translate(90px, 50px) rotate(20deg);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
 }
 
-.paper-petals-inner {
-  transform-origin: 240px 245px;
-  animation: petalsUnfoldInner 8s cubic-bezier(0.34, 1.5, 0.64, 1) infinite;
+/* 3. Artistic Scissors (Slides to Lower Right) */
+.supply-scissors {
+  transform-origin: 495px 380px;
+  animation: scissorsSpread 1.7s cubic-bezier(0.22, 1, 0.36, 1) 2.28s both;
 }
-@keyframes petalsUnfoldInner {
-  0%, 26% { transform: scale(0); opacity: 0; }
-  36% { transform: scale(1.14); opacity: 1; }
-  42%, 84% { transform: scale(1); opacity: 1; }
-  92%, 100% { transform: scale(0); opacity: 0; }
+@keyframes scissorsSpread {
+  0% {
+    transform: translate(-120px, -70px) rotate(-22deg);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* 4. Coloured Pencils */
+.supply-pencil-1 {
+  transform-origin: 95px 400px;
+  animation: pencil1Spread 1.5s cubic-bezier(0.22, 1, 0.36, 1) 2.3s both;
+}
+@keyframes pencil1Spread {
+  0% {
+    transform: translate(70px, -45px) rotate(30deg);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.supply-pencil-2 {
+  transform-origin: 150px 460px;
+  animation: pencil2Spread 1.55s cubic-bezier(0.22, 1, 0.36, 1) 2.35s both;
+}
+@keyframes pencil2Spread {
+  0% {
+    transform: translate(50px, -55px) rotate(-18deg);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* 5. Paint Tubes */
+.supply-paint-tube-1 {
+  transform-origin: 520px 250px;
+  animation: tube1Spread 1.4s cubic-bezier(0.22, 1, 0.36, 1) 2.32s both;
+}
+@keyframes tube1Spread {
+  0% {
+    transform: translate(-80px, 30px) rotate(15deg);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.supply-paint-tube-2 {
+  transform-origin: 95px 290px;
+  animation: tube2Spread 1.45s cubic-bezier(0.22, 1, 0.36, 1) 2.38s both;
+}
+@keyframes tube2Spread {
+  0% {
+    transform: translate(75px, 20px) rotate(-20deg);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* 6. Ribbon Spool & Unfurling Satin Ribbon */
+.supply-ribbon-spool {
+  transform-origin: 375px 405px;
+  animation: spoolSpread 1.6s cubic-bezier(0.22, 1, 0.36, 1) 2.25s both;
+}
+@keyframes spoolSpread {
+  0% {
+    transform: translate(-70px, -50px) rotate(-40deg);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.flowing-ribbon {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  animation: ribbonUnfurl 1.8s cubic-bezier(0.25, 1, 0.5, 1) 2.4s forwards;
+}
+@keyframes ribbonUnfurl {
+  to { stroke-dashoffset: 0; }
+}
+
+/* 7. Paper Cutouts Drifting */
+.supply-paper-card {
+  transform-origin: 112px 140px;
+  animation: paperCardDrift 1.7s cubic-bezier(0.25, 1, 0.5, 1) 2.22s both;
+}
+@keyframes paperCardDrift {
+  0% {
+    transform: translate(60px, 40px) rotate(15deg) scale(0.9);
+    opacity: 0;
+  }
+  30% { opacity: 0.9; }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.supply-kraft-tag {
+  transform-origin: 500px 95px;
+  animation: kraftTagDrift 1.6s cubic-bezier(0.25, 1, 0.5, 1) 2.3s both;
+}
+@keyframes kraftTagDrift {
+  0% {
+    transform: translate(-50px, 30px) rotate(-20deg) scale(0.9);
+    opacity: 0;
+  }
+  30% { opacity: 0.9; }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
 }
 
 /* ------------------------------------------------------------
-   PAPER CONFETTI FLUTTER
+   EDITORIAL FOOTER & REPLAY CONTROLS
    ------------------------------------------------------------ */
-.confetti--1 { animation: confettiFlutter 5s ease-in-out infinite; transform-origin: 150px 186px; }
-.confetti--2 { animation: confettiFlutter 6s ease-in-out infinite 0.5s; transform-origin: 335px 182px; }
-.confetti--3 { animation: confettiFlutter 5.5s ease-in-out infinite 1s; transform-origin: 175px 140px; }
-.confetti--4 { animation: confettiFlutter 6.5s ease-in-out infinite 1.5s; transform-origin: 310px 135px; }
-.confetti--star { animation: confettiSparkle 3s ease-in-out infinite; transform-origin: 240px 68px; }
-
-@keyframes confettiFlutter {
-  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.65; }
-  50% { transform: translateY(-10px) rotate(45deg); opacity: 1; }
-}
-@keyframes confettiSparkle {
-  0%, 100% { transform: scale(0.8) rotate(0deg); opacity: 0.5; }
-  50% { transform: scale(1.25) rotate(90deg); opacity: 1; }
-}
-
-/* ------------------------------------------------------------
-   STAGE OVERRIDES & TOOLBAR
-   ------------------------------------------------------------ */
-.stage--bloom .craft-scissors,
-.stage--bloom .scissor-cut-path {
-  display: none !important;
-}
-.stage--bloom .paper-sun {
-  animation: none !important;
-  transform: translateY(0) scale(1) !important;
-  opacity: 1 !important;
-}
-.stage--bloom .paper-stem {
-  animation: none !important;
-  transform: scaleY(1) !important;
-  opacity: 1 !important;
-}
-.stage--bloom .paper-leaf--left {
-  animation: paperLeafSwayLeft 4s ease-in-out infinite alternate !important;
-  transform: scale(1) !important;
-  opacity: 1 !important;
-}
-.stage--bloom .paper-leaf--right {
-  animation: paperLeafSwayRight 4s ease-in-out infinite alternate !important;
-  transform: scale(1) !important;
-  opacity: 1 !important;
-}
-.stage--bloom .paper-flower-head {
-  animation: paperBloomSway 4s ease-in-out infinite alternate !important;
-  transform: scale(1) !important;
-  opacity: 1 !important;
-}
-.stage--bloom .paper-petals-outer,
-.stage--bloom .paper-petals-inner {
-  animation: none !important;
-  transform: scale(1) !important;
-  opacity: 1 !important;
-}
-
-@keyframes paperBloomSway {
-  from { transform: scale(1) rotate(-3.5deg); }
-  to { transform: scale(1.02) rotate(3.5deg); }
-}
-@keyframes paperLeafSwayLeft {
-  from { transform: scale(1) rotate(-5deg); }
-  to { transform: scale(1) rotate(3deg); }
-}
-@keyframes paperLeafSwayRight {
-  from { transform: scale(1) rotate(5deg); }
-  to { transform: scale(1) rotate(-3deg); }
-}
-
-/* Toolbar Controls */
-.papercraft-toolbar {
+.cinematic-craft-footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.6rem;
-  margin-top: 1.2rem;
-  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0 0.5rem;
 }
-.craft-mode-btn, .craft-replay-btn {
+.craft-scene-label {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.42rem 0.95rem;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #7A6B5F;
+  letter-spacing: 0.04em;
+}
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #E8A15A;
+  box-shadow: 0 0 8px rgba(232, 161, 90, 0.9);
+  animation: dotGlow 2s ease-in-out infinite;
+}
+@keyframes dotGlow {
+  0%, 100% { transform: scale(0.85); opacity: 0.7; }
+  50% { transform: scale(1.25); opacity: 1; }
+}
+
+.replay-story-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 1rem;
   border-radius: 999px;
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  border: 1.5px solid rgba(74, 59, 50, 0.16);
+  border: 1.5px solid rgba(168, 121, 84, 0.35);
   background: rgba(255, 255, 255, 0.92);
-  color: var(--brown);
+  color: #3C332B;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(74, 59, 50, 0.06);
-  backdrop-filter: blur(4px);
-  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(60, 51, 43, 0.06);
+  backdrop-filter: blur(6px);
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.craft-mode-btn:hover, .craft-replay-btn:hover {
-  border-color: #E69500;
-  color: #8C5400;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(74, 59, 50, 0.12);
+.replay-story-btn:hover {
+  border-color: #E8A15A;
+  color: #2E1F0E;
+  background: #FFF8EF;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px rgba(232, 161, 90, 0.25);
 }
-.craft-mode-btn.is-active {
-  background: var(--brown);
-  color: var(--white);
-  border-color: var(--brown);
+.replay-icon {
+  font-size: 0.95rem;
+  transition: transform 0.4s ease;
+}
+.replay-story-btn:hover .replay-icon {
+  transform: rotate(-180deg);
 }
 
 /* ------------------------------------------------------------
-   REDUCED MOTION SUPPORT
+   ACCESSIBILITY: REDUCED MOTION PREFERENCE
+   Displays the completed editorial still-life in tranquil resting state
    ------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
-  .paper-float,
-  .pill-scissors,
-  .pill-sparkle,
-  .crease-underline path,
-  .scissor-cut-path,
-  .craft-scissors,
-  .paper-sun,
-  .paper-sun-rays,
-  .sun-pulse-glow,
-  .paper-stem,
-  .paper-leaf--left,
-  .paper-leaf--right,
-  .paper-flower-head,
-  .paper-petals-outer,
-  .paper-petals-inner,
-  .confetti {
+  .sunlight-beam,
+  .dust-mote,
+  .falling-glass-group,
+  .cup-contact-shadow,
+  .sunflower-head,
+  .sunflower-leaf,
+  .supply-brush-1,
+  .supply-brush-2,
+  .supply-scissors,
+  .supply-pencil-1,
+  .supply-pencil-2,
+  .supply-paint-tube-1,
+  .supply-paint-tube-2,
+  .supply-ribbon-spool,
+  .flowing-ribbon,
+  .supply-paper-card,
+  .supply-kraft-tag,
+  .eyebrow-accent,
+  .live-dot {
     animation: none !important;
   }
 
-  .crease-underline path { stroke-dashoffset: 0 !important; }
-  .scissor-cut-path { opacity: 0.8 !important; stroke-dashoffset: 0 !important; }
-  .craft-scissors { display: none !important; }
-  .paper-sun { transform: translateY(0) scale(1) !important; opacity: 1 !important; }
-  .paper-stem { transform: scaleY(1) !important; opacity: 1 !important; }
-  .paper-leaf--left, .paper-leaf--right { transform: scale(1) rotate(0deg) !important; opacity: 1 !important; }
-  .paper-flower-head { transform: scale(1) rotate(0deg) !important; opacity: 1 !important; }
-  .paper-petals-outer, .paper-petals-inner { transform: scale(1) !important; opacity: 1 !important; }
+  .sunlight-beam { opacity: 0.9; }
+  .falling-glass-group {
+    transform: translate(0px, 0px) rotate(18deg) !important;
+    opacity: 1 !important;
+  }
+  .cup-contact-shadow {
+    opacity: 0.38 !important;
+    transform: scale(1) !important;
+  }
+  .sunflower-head {
+    transform: rotate(0deg) !important;
+  }
+  .supply-brush-1,
+  .supply-brush-2,
+  .supply-scissors,
+  .supply-pencil-1,
+  .supply-pencil-2,
+  .supply-paint-tube-1,
+  .supply-paint-tube-2,
+  .supply-ribbon-spool,
+  .supply-paper-card,
+  .supply-kraft-tag {
+    transform: translate(0, 0) rotate(0deg) !important;
+    opacity: 1 !important;
+  }
+  .flowing-ribbon {
+    stroke-dashoffset: 0 !important;
+  }
 }
+
 
