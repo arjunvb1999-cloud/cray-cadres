@@ -1,18 +1,24 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
 import { siteConfig, whatsappLink } from "../data/siteConfig.js";
+import PaintingHeroArtwork from "./PaintingHeroArtwork.jsx";
 import CinematicCraftScene from "./CinematicCraftScene.jsx";
 
 /**
  * Editorial Hero Section: The Sunlit Craft Atelier
  * 
- * A cinematic hero experience for Cray Cadres:
+ * Features:
  * - Left: Editorial typography, story copy, and sunshine-inspired CTA buttons.
- * - Right: Animated crafting scene featuring the falling glass cup, sunflower,
- *   and scattered craft materials across a warm oak table in golden-hour sunlight.
+ * - Right: Toggleable hero visual supporting:
+ *   1. "Painting Video": The user's original watercolor & butterfly painting with
+ *      HTML5 video (autoplay loop muted playsinline) from Runway / Luma.
+ *   2. "Sunlit Craft Story": The falling glass cup, sunflower, and scattered
+ *      crafting supplies on the wooden table.
  */
 export default function Hero() {
   const { hero } = siteConfig;
+  const [heroView, setHeroView] = useState("craft"); // "craft" is the primary storytelling visual
 
   return (
     <section className="hero hero--cinematic">
@@ -91,9 +97,36 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ---------------- Right: The Cinematic Craft Animation Scene ---------------- */}
+        {/* ---------------- Right: Artwork Visual / Video Player ---------------- */}
         <div className="hero-visual hero-visual--cinematic">
-          <CinematicCraftScene />
+          {/* Visual Mode Selector Tabs */}
+          <div className="hero-artwork-tabs" role="tablist" aria-label="Hero visual view">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={heroView === "painting"}
+              className={`hero-tab-btn ${heroView === "painting" ? "is-active" : ""}`}
+              onClick={() => setHeroView("painting")}
+            >
+              <span>🎨</span> Original Painting Video
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={heroView === "craft"}
+              className={`hero-tab-btn ${heroView === "craft" ? "is-active" : ""}`}
+              onClick={() => setHeroView("craft")}
+            >
+              <span>🌻</span> Sunlit Craft Story
+            </button>
+          </div>
+
+          {/* Render selected artwork visual */}
+          {heroView === "painting" ? (
+            <PaintingHeroArtwork />
+          ) : (
+            <CinematicCraftScene />
+          )}
         </div>
       </div>
     </section>
