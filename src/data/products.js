@@ -52,6 +52,24 @@ export const products = [
     details: { customisation: "", prepTime: "", materials: "", care: "" },
   },
   {
+    id: "clay-puppy-figurines",
+    name: "Handmade Clay Puppy Figurines",
+    category: "clay-creations",
+    price: 549,
+    image: "/images/clay-puppy-figurines.jpg",
+    short: "Adorable miniature dog sculptures, handcrafted in clay.",
+    description:
+      "These irresistibly cute clay puppy figurines are sculpted entirely by hand, each one with its own personality and charm. Perfect as a desk companion, a gift for a dog lover, or a sweet keepsake to treasure. Available in different coat colours — a tiny gesture with a whole lot of love.",
+    occasions: ["birthdays", "friendship", "just-because", "thank-you"],
+    featured: true,
+    details: {
+      customisation: "Choose your puppy's coat colour or request a custom breed likeness — message us on WhatsApp.",
+      prepTime: "Usually ready within 3–5 days. Rush orders available on request.",
+      materials: "Air-dry clay, hand-painted with non-toxic acrylic colours.",
+      care: "Keep dry and away from direct sunlight to preserve the colours. Dust gently with a soft cloth.",
+    },
+  },
+  {
     id: "clay-charm-set",
     name: "Tiny Clay Charm Set",
     category: "clay-creations",
